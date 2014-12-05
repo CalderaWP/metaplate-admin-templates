@@ -30,25 +30,25 @@
 		<h4><?php _e( 'Metaplate Setup & Settings', 'metaplate' ); ?> <small class="description"><?php _e( 'Setup', 'metaplate' ); ?></small></h4>
 		<?php
 		// pull in the general settings template
-		include MTPT_ADMIN_TEMPLATE_PATH . 'general-settings.php';
+		include  'general-settings.php';
 		?>
 	</div>	<div id="metaplate-panel-html" class="metaplate-editor-panel" {{#is _current_tab value="#metaplate-panel-html"}}{{else}} style="display:none;" {{/is}}>		
 		<h4><?php _e('Frontend HTML', 'metaplate') ; ?> <small class="description"><?php _e('Template', 'metaplate') ; ?></small></h4>
 		<?php
 		// pull in the general settings template
-		include MTPT_ADMIN_TEMPLATE_PATH . 'html-panel.php';
+		include  'html-panel.php';
 		?>
 	</div>	<div id="metaplate-panel-css" class="metaplate-editor-panel" {{#is _current_tab value="#metaplate-panel-css"}}{{else}} style="display:none;" {{/is}}>		
 		<h4><?php _e('Custom Styles', 'metaplate') ; ?> <small class="description"><?php _e('CSS', 'metaplate') ; ?></small></h4>
 		<?php
 		// pull in the general settings template
-		include MTPT_ADMIN_TEMPLATE_PATH . 'css-panel.php';
+		include  'css-panel.php';
 		?>
 	</div>	<div id="metaplate-panel-js" class="metaplate-editor-panel" {{#is _current_tab value="#metaplate-panel-js"}}{{else}} style="display:none;" {{/is}}>		
 		<h4><?php _e('Custom Scripts', 'metaplate') ; ?> <small class="description"><?php _e('Javascript', 'metaplate') ; ?></small></h4>
 		<?php
 		// pull in the general settings template
-		include MTPT_ADMIN_TEMPLATE_PATH . 'js-panel.php';
+		include  'js-panel.php';
 		?>
 	</div>
 
