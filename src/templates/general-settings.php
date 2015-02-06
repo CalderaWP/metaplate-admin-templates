@@ -2,12 +2,18 @@
 			<label><?php _e( 'Name', 'metaplate' ); ?></label>
 			<input type="text" name="name" value="{{name}}" data-sync="#metaplate-name-title" id="metaplate-name" required>
 		</div>
+		
 		<div class="metaplate-config-group">
 			<label><?php _e( 'Slug', 'metaplate' ); ?></label>
 			<input type="text" name="slug" value="{{slug}}" data-format="slug" data-sync=".metaplate-subline" data-master="#metaplate-name" id="metaplate-slug" required>
 		</div>
+		
+		<div class="metaplate-config-group">
+			<label><?php _e( 'Autoload', 'metaplate' ); ?></label>
+			<label><input data-live-sync="true" type="checkbox" name="content_type_specific" value="1" id="metaplate-content_type_specific" {{#if content_type_specific}}checked="checked"{{/if}}> <?php _e('Enable', 'metaplate'); ?></label>			
+		</div>
 
-		<?php if ( $metaplate[ 'content_type_specific' ]  ) { ?>
+		{{#if content_type_specific}}
 			<div class="metaplate-config-group">
 				<label><?php _e( 'Page Types', 'metaplate' ); ?></label>
 				<select name="page_type" data-live-sync="true">
@@ -36,7 +42,17 @@
 				<?php } ?>
 				</div>
 			</div>
-		<?php } ?>
+		{{else}}
+			<h4><?php _e( 'Rendering Code', 'metaplate' ); ?> <small class="description"><?php _e( 'template tags', 'metaplate' ); ?></small></h4>
+			<div class="metaplate-config-group">
+				<label><?php _e( 'Template Function:', 'metaplate' ); ?></label>
+				<code style="display: inline-block; padding: 10px;">&lt;?php echo caldera_metaplate_render( '{{id}}' ); ?&gt;</code></p>
+			</div>
+			<div class="metaplate-config-group">
+				<label><?php _e( 'Shortcode:', 'metaplate' ); ?></label>
+				<code style="display: inline-block; padding: 10px;">[caldera_metaplate id="{{id}}"]</code></p>
+			</div>
+		{{/if}}
 
 
 		<?php
